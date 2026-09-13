@@ -131,7 +131,7 @@ export function ServicesCards() {
         onMouseLeave={() => setHoveredCard(null)}
         whileHover={{ y: -7, scale: 1.025 }}
         transition={{ type: 'spring', stiffness: 350, damping: 20 }}
-        className="group relative flex flex-col justify-between p-[2px] cursor-pointer transition-all duration-300"
+        className="group relative flex flex-col justify-between p-[2px] cursor-pointer transition-all duration-300 w-full"
         style={{
           filter: isHovered
             ? 'drop-shadow(0 0 24px rgba(0, 153, 255, 0.95)) drop-shadow(0 0 45px rgba(0, 120, 255, 0.6))'
@@ -155,11 +155,7 @@ export function ServicesCards() {
               'polygon(18.5px 0%, calc(100% - 18.5px) 0%, 100% 18.5px, 100% calc(100% - 18.5px), calc(100% - 18.5px) 100%, 18.5px 100%, 0% calc(100% - 18.5px), 0% 18.5px)',
           }}
         >
-          {/* Cyber Corner Accent Notches (Matching original image) */}
-          <span className="absolute top-2.5 left-2.5 w-3.5 h-3.5 border-t border-l border-[#0099ff]/60 group-hover:border-[#00e5ff] transition-colors pointer-events-none" />
-          <span className="absolute top-2.5 right-2.5 w-3.5 h-3.5 border-t border-r border-[#0099ff]/60 group-hover:border-[#00e5ff] transition-colors pointer-events-none" />
-          <span className="absolute bottom-2.5 left-2.5 w-3.5 h-3.5 border-b border-l border-[#0099ff]/60 group-hover:border-[#00e5ff] transition-colors pointer-events-none" />
-          <span className="absolute bottom-2.5 right-2.5 w-3.5 h-3.5 border-b border-r border-[#0099ff]/60 group-hover:border-[#00e5ff] transition-colors pointer-events-none" />
+
 
           {/* Subtle radial inner glow on hover */}
           <div className="absolute -top-10 -right-10 w-52 h-52 rounded-full bg-[#0099ff]/15 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -171,7 +167,7 @@ export function ServicesCards() {
             </div>
 
             {/* Title */}
-            <h3 className="font-sans text-xl sm:text-2xl lg:text-[22px] font-black tracking-wider text-white uppercase leading-tight drop-shadow-sm">
+            <h3 className="font-['MasterVictory'] text-2xl sm:text-3xl lg:text-[26px] xl:text-[28px] font-normal leading-snug tracking-normal text-white select-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
               {card.title}
             </h3>
 
@@ -181,16 +177,7 @@ export function ServicesCards() {
             </p>
           </div>
 
-          {/* Bottom: Arrow Link */}
-          <div className="mt-8 flex items-center pt-2">
-            <motion.div
-              animate={{ x: isHovered ? 8 : 0 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-              className="flex items-center text-[#0099ff] font-bold filter drop-shadow-[0_0_12px_rgba(0,153,255,0.9)]"
-            >
-              <ArrowRight className="h-6 w-6" strokeWidth={2.5} />
-            </motion.div>
-          </div>
+
         </div>
       </motion.div>
     )
@@ -245,14 +232,14 @@ export function ServicesCards() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-60px' }}
-          className="relative flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-10 xl:gap-12"
+          className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 items-center"
         >
-          {/* Left Flank Graphic: strong-community.png */}
-          <div className="relative hidden lg:flex flex-col items-center justify-center w-72 xl:w-80 select-none pointer-events-none">
+          {/* Left Flank Graphic: strong-community.png (2 cols on lg) */}
+          <div className="relative hidden lg:flex flex-col items-center justify-center lg:col-span-2 select-none pointer-events-none">
             <motion.div
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-              className="relative h-68 w-60 xl:h-80 xl:w-72 filter drop-shadow-[0_0_24px_rgba(0,140,255,0.9)]"
+              className="relative h-60 w-52 xl:h-72 xl:w-64 filter drop-shadow-[0_0_24px_rgba(0,140,255,0.9)]"
             >
               <Image
                 src="/strong-community.png"
@@ -264,13 +251,18 @@ export function ServicesCards() {
             </motion.div>
           </div>
 
-          {/* Center 2 Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 xl:gap-12 flex-1 max-w-4xl xl:max-w-[980px] 2xl:max-w-[1040px] w-full">
-            {bottomCards.map((card) => renderCard(card))}
+          {/* Bottom Card 1: 4 cols on lg, exactly matching top cards (4/12) */}
+          <div className="lg:col-span-4 w-full">
+            {renderCard(bottomCards[0])}
           </div>
 
-          {/* Right Flank Graphic: crown-icon.png and cross-icon.png */}
-          <div className="relative hidden lg:flex flex-col items-center justify-center w-72 xl:w-80 gap-6 select-none pointer-events-none">
+          {/* Bottom Card 2: 4 cols on lg, exactly matching top cards (4/12) */}
+          <div className="lg:col-span-4 w-full">
+            {renderCard(bottomCards[1])}
+          </div>
+
+          {/* Right Flank Graphic: crown-icon.png and cross-icon.png (2 cols on lg) */}
+          <div className="relative hidden lg:flex flex-col items-center justify-center lg:col-span-2 gap-6 select-none pointer-events-none">
             {/* Crown Icon */}
             <motion.div
               animate={{ y: [0, -5, 0] }}
