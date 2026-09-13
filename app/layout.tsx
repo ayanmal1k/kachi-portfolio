@@ -23,6 +23,11 @@ const syne = Syne({
 export const metadata: Metadata = {
   title: 'Kachi — Creative Studio & Portfolio',
   description: 'Award-winning creative engineering and high-performance interactive experiences.',
+  icons: {
+    icon: '/crown-icon.png',
+    shortcut: '/crown-icon.png',
+    apple: '/crown-icon.png',
+  },
 }
 
 export default function RootLayout({

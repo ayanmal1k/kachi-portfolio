@@ -3,15 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { motion, type Variants } from 'framer-motion'
-import {
-  Users,
-  Megaphone,
-  Shield,
-  Star,
-  Rocket,
-  ChessKnight,
-  ArrowRight,
-} from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 interface ServiceCardData {
   id: string
@@ -53,10 +45,14 @@ export function ServicesCards() {
       title: 'COMMUNITY MANAGEMENT',
       desc: 'Manage, engage & grow your community across all platforms.',
       icon: (
-        <Users
-          strokeWidth={1.5}
-          className="h-16 w-16 sm:h-20 sm:w-20 text-[#0099ff] filter drop-shadow-[0_0_18px_rgba(0,153,255,0.95)] drop-shadow-[0_0_32px_rgba(0,120,255,0.7)] transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_36px_rgba(0,200,255,1)]"
-        />
+        <div className="relative h-16 w-16 sm:h-20 sm:w-20 transition-transform duration-300 group-hover:scale-110 filter drop-shadow-[0_0_20px_rgba(0,153,255,0.95)]">
+          <Image
+            src="/services card icons/community.png"
+            alt="Community Management"
+            fill
+            className="object-contain"
+          />
+        </div>
       ),
     },
     {
@@ -64,10 +60,14 @@ export function ServicesCards() {
       title: 'KOL & MARKETING',
       desc: 'Promote your project through powerful influencers & networks.',
       icon: (
-        <Megaphone
-          strokeWidth={1.5}
-          className="h-16 w-16 sm:h-20 sm:w-20 text-[#0099ff] filter drop-shadow-[0_0_18px_rgba(0,153,255,0.95)] drop-shadow-[0_0_32px_rgba(0,120,255,0.7)] transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_36px_rgba(0,200,255,1)]"
-        />
+        <div className="relative h-16 w-16 sm:h-20 sm:w-20 transition-transform duration-300 group-hover:scale-110 filter drop-shadow-[0_0_20px_rgba(0,153,255,0.95)]">
+          <Image
+            src="/services card icons/announce.png"
+            alt="KOL & Marketing"
+            fill
+            className="object-contain"
+          />
+        </div>
       ),
     },
     {
@@ -75,14 +75,12 @@ export function ServicesCards() {
       title: 'AMBASSADOR PROGRAM',
       desc: 'Build and manage ambassador programs that scale.',
       icon: (
-        <div className="relative flex items-center justify-center">
-          <Shield
-            strokeWidth={1.5}
-            className="h-16 w-16 sm:h-20 sm:w-20 text-[#0099ff] filter drop-shadow-[0_0_18px_rgba(0,153,255,0.95)] drop-shadow-[0_0_32px_rgba(0,120,255,0.7)] transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_36px_rgba(0,200,255,1)]"
-          />
-          <Star
-            strokeWidth={1.5}
-            className="absolute h-7 w-7 sm:h-8 sm:w-8 text-[#0099ff] filter drop-shadow-[0_0_12px_rgba(0,153,255,0.9)]"
+        <div className="relative h-16 w-16 sm:h-20 sm:w-20 transition-transform duration-300 group-hover:scale-110 filter drop-shadow-[0_0_20px_rgba(0,153,255,0.95)]">
+          <Image
+            src="/services card icons/shieldd.png"
+            alt="Ambassador Program"
+            fill
+            className="object-contain"
           />
         </div>
       ),
@@ -95,10 +93,14 @@ export function ServicesCards() {
       title: 'RAIDING & SHILLING',
       desc: 'Pro raiding and organic shilling to boost visibility.',
       icon: (
-        <Rocket
-          strokeWidth={1.5}
-          className="h-16 w-16 sm:h-20 sm:w-20 text-[#0099ff] filter drop-shadow-[0_0_18px_rgba(0,153,255,0.95)] drop-shadow-[0_0_32px_rgba(0,120,255,0.7)] transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_36px_rgba(0,200,255,1)]"
-        />
+        <div className="relative h-16 w-16 sm:h-20 sm:w-20 transition-transform duration-300 group-hover:scale-110 filter drop-shadow-[0_0_20px_rgba(0,153,255,0.95)]">
+          <Image
+            src="/services card icons/rockettt.png"
+            alt="Raiding & Shilling"
+            fill
+            className="object-contain"
+          />
+        </div>
       ),
     },
     {
@@ -106,10 +108,14 @@ export function ServicesCards() {
       title: 'STRATEGY & CONSULTING',
       desc: 'Provide expert advice and strategies for long-term growth.',
       icon: (
-        <ChessKnight
-          strokeWidth={1.5}
-          className="h-16 w-16 sm:h-20 sm:w-20 text-[#0099ff] filter drop-shadow-[0_0_18px_rgba(0,153,255,0.95)] drop-shadow-[0_0_32px_rgba(0,120,255,0.7)] transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_36px_rgba(0,200,255,1)]"
-        />
+        <div className="relative h-16 w-16 sm:h-20 sm:w-20 transition-transform duration-300 group-hover:scale-110 filter drop-shadow-[0_0_20px_rgba(0,153,255,0.95)]">
+          <Image
+            src="/services card icons/chess.png"
+            alt="Strategy & Consulting"
+            fill
+            className="object-contain"
+          />
+        </div>
       ),
     },
   ]
@@ -192,19 +198,34 @@ export function ServicesCards() {
 
   return (
     <section className="relative w-full bg-[#02050e] py-16 sm:py-20 lg:py-28 text-white overflow-hidden">
+      {/* ============================================================ */}
+      {/* BLUE PAINT SPLASHES BACKGROUND TEXTURE                      */}
+      {/* ============================================================ */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-45 mix-blend-screen pointer-events-none transition-opacity duration-1000"
+        style={{ backgroundImage: "url('/services-bg.jpg')" }}
+        aria-hidden="true"
+      />
+
+      {/* Atmospheric Dark Overlays for Readability & Depth */}
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-[#02050e] via-black/40 to-[#02050e] pointer-events-none"
+        aria-hidden="true"
+      />
+
       {/* Background ambient lighting effects */}
       <div
-        className="absolute top-1/4 left-10 h-[500px] w-[500px] rounded-full bg-[#0088ff]/12 blur-[150px] pointer-events-none"
+        className="absolute top-1/4 left-10 h-[500px] w-[500px] rounded-full bg-[#0088ff]/15 blur-[150px] pointer-events-none"
         aria-hidden="true"
       />
       <div
-        className="absolute bottom-1/4 right-10 h-[500px] w-[500px] rounded-full bg-[#00c8ff]/10 blur-[160px] pointer-events-none"
+        className="absolute bottom-1/4 right-10 h-[500px] w-[500px] rounded-full bg-[#00c8ff]/12 blur-[160px] pointer-events-none"
         aria-hidden="true"
       />
 
       <div className="relative z-10 mx-auto max-w-[1560px] px-6 sm:px-10 lg:px-14 xl:px-16">
         {/* ============================================================ */}
-        {/* ROW 1: 3 CARDS (Wide Layout)                                 */}
+        {/* ROW 1: 3 CARDS (Original Chamfer Card Layout)                */}
         {/* ============================================================ */}
         <motion.div
           variants={containerVariants}
@@ -217,7 +238,7 @@ export function ServicesCards() {
         </motion.div>
 
         {/* ============================================================ */}
-        {/* ROW 2: 2 CARDS CENTERED WITH FLANKING ASSETS (Wide Layout)   */}
+        {/* ROW 2: 2 CARDS CENTERED WITH FLANKING ASSETS                 */}
         {/* ============================================================ */}
         <motion.div
           variants={containerVariants}
@@ -243,7 +264,7 @@ export function ServicesCards() {
             </motion.div>
           </div>
 
-          {/* Center 2 Cards (Generously Wide) */}
+          {/* Center 2 Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 xl:gap-12 flex-1 max-w-4xl xl:max-w-[980px] 2xl:max-w-[1040px] w-full">
             {bottomCards.map((card) => renderCard(card))}
           </div>
@@ -282,7 +303,7 @@ export function ServicesCards() {
           </div>
         </motion.div>
 
-        {/* Mobile View Flank Badges (Stacked underneath on small screens) */}
+        {/* Mobile View Flank Badges */}
         <div className="mt-12 flex lg:hidden items-center justify-around gap-6 select-none pointer-events-none">
           <div className="relative h-40 w-36 filter drop-shadow-[0_0_18px_rgba(0,140,255,0.9)]">
             <Image
