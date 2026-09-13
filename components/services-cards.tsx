@@ -1,0 +1,317 @@
+'use client'
+
+import { useState } from 'react'
+import Image from 'next/image'
+import { motion, type Variants } from 'framer-motion'
+import {
+  Users,
+  Megaphone,
+  Shield,
+  Star,
+  Rocket,
+  ChessKnight,
+  ArrowRight,
+} from 'lucide-react'
+
+interface ServiceCardData {
+  id: string
+  title: string
+  desc: string
+  icon: React.ReactNode
+}
+
+export function ServicesCards() {
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null)
+
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.1,
+      },
+    },
+  }
+
+  const cardVariants: Variants = {
+    hidden: { opacity: 0, y: 35 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: 'spring',
+        stiffness: 110,
+        damping: 18,
+      },
+    },
+  }
+
+  const topCards: ServiceCardData[] = [
+    {
+      id: 'community',
+      title: 'COMMUNITY MANAGEMENT',
+      desc: 'Manage, engage & grow your community across all platforms.',
+      icon: (
+        <Users
+          strokeWidth={1.5}
+          className="h-16 w-16 sm:h-20 sm:w-20 text-[#0099ff] filter drop-shadow-[0_0_18px_rgba(0,153,255,0.95)] drop-shadow-[0_0_32px_rgba(0,120,255,0.7)] transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_36px_rgba(0,200,255,1)]"
+        />
+      ),
+    },
+    {
+      id: 'marketing',
+      title: 'KOL & MARKETING',
+      desc: 'Promote your project through powerful influencers & networks.',
+      icon: (
+        <Megaphone
+          strokeWidth={1.5}
+          className="h-16 w-16 sm:h-20 sm:w-20 text-[#0099ff] filter drop-shadow-[0_0_18px_rgba(0,153,255,0.95)] drop-shadow-[0_0_32px_rgba(0,120,255,0.7)] transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_36px_rgba(0,200,255,1)]"
+        />
+      ),
+    },
+    {
+      id: 'ambassador',
+      title: 'AMBASSADOR PROGRAM',
+      desc: 'Build and manage ambassador programs that scale.',
+      icon: (
+        <div className="relative flex items-center justify-center">
+          <Shield
+            strokeWidth={1.5}
+            className="h-16 w-16 sm:h-20 sm:w-20 text-[#0099ff] filter drop-shadow-[0_0_18px_rgba(0,153,255,0.95)] drop-shadow-[0_0_32px_rgba(0,120,255,0.7)] transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_36px_rgba(0,200,255,1)]"
+          />
+          <Star
+            strokeWidth={1.5}
+            className="absolute h-7 w-7 sm:h-8 sm:w-8 text-[#0099ff] filter drop-shadow-[0_0_12px_rgba(0,153,255,0.9)]"
+          />
+        </div>
+      ),
+    },
+  ]
+
+  const bottomCards: ServiceCardData[] = [
+    {
+      id: 'raiding',
+      title: 'RAIDING & SHILLING',
+      desc: 'Pro raiding and organic shilling to boost visibility.',
+      icon: (
+        <Rocket
+          strokeWidth={1.5}
+          className="h-16 w-16 sm:h-20 sm:w-20 text-[#0099ff] filter drop-shadow-[0_0_18px_rgba(0,153,255,0.95)] drop-shadow-[0_0_32px_rgba(0,120,255,0.7)] transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_36px_rgba(0,200,255,1)]"
+        />
+      ),
+    },
+    {
+      id: 'strategy',
+      title: 'STRATEGY & CONSULTING',
+      desc: 'Provide expert advice and strategies for long-term growth.',
+      icon: (
+        <ChessKnight
+          strokeWidth={1.5}
+          className="h-16 w-16 sm:h-20 sm:w-20 text-[#0099ff] filter drop-shadow-[0_0_18px_rgba(0,153,255,0.95)] drop-shadow-[0_0_32px_rgba(0,120,255,0.7)] transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_36px_rgba(0,200,255,1)]"
+        />
+      ),
+    },
+  ]
+
+  const renderCard = (card: ServiceCardData) => {
+    const isHovered = hoveredCard === card.id
+
+    return (
+      <motion.div
+        key={card.id}
+        variants={cardVariants}
+        onMouseEnter={() => setHoveredCard(card.id)}
+        onMouseLeave={() => setHoveredCard(null)}
+        whileHover={{ y: -7, scale: 1.025 }}
+        transition={{ type: 'spring', stiffness: 350, damping: 20 }}
+        className="group relative flex flex-col justify-between p-[2px] cursor-pointer transition-all duration-300"
+        style={{
+          filter: isHovered
+            ? 'drop-shadow(0 0 24px rgba(0, 153, 255, 0.95)) drop-shadow(0 0 45px rgba(0, 120, 255, 0.6))'
+            : 'drop-shadow(0 0 14px rgba(0, 140, 255, 0.75))',
+        }}
+      >
+        {/* Outer Chamfer Border Frame (Glowing POW Blue) */}
+        <div
+          className="absolute inset-0 bg-[#0099ff] transition-all duration-300 group-hover:bg-[#00c8ff]"
+          style={{
+            clipPath:
+              'polygon(20px 0%, calc(100% - 20px) 0%, 100% 20px, 100% calc(100% - 20px), calc(100% - 20px) 100%, 20px 100%, 0% calc(100% - 20px), 0% 20px)',
+          }}
+        />
+
+        {/* Inner Card Background (Deep Dark Glass) */}
+        <div
+          className="relative flex flex-col justify-between h-full min-h-[360px] sm:min-h-[390px] p-8 sm:p-10 lg:p-11 bg-[#040814]/95 group-hover:bg-[#050c1f]/90 backdrop-blur-xl transition-colors duration-300 overflow-hidden"
+          style={{
+            clipPath:
+              'polygon(18.5px 0%, calc(100% - 18.5px) 0%, 100% 18.5px, 100% calc(100% - 18.5px), calc(100% - 18.5px) 100%, 18.5px 100%, 0% calc(100% - 18.5px), 0% 18.5px)',
+          }}
+        >
+          {/* Cyber Corner Accent Notches (Matching original image) */}
+          <span className="absolute top-2.5 left-2.5 w-3.5 h-3.5 border-t border-l border-[#0099ff]/60 group-hover:border-[#00e5ff] transition-colors pointer-events-none" />
+          <span className="absolute top-2.5 right-2.5 w-3.5 h-3.5 border-t border-r border-[#0099ff]/60 group-hover:border-[#00e5ff] transition-colors pointer-events-none" />
+          <span className="absolute bottom-2.5 left-2.5 w-3.5 h-3.5 border-b border-l border-[#0099ff]/60 group-hover:border-[#00e5ff] transition-colors pointer-events-none" />
+          <span className="absolute bottom-2.5 right-2.5 w-3.5 h-3.5 border-b border-r border-[#0099ff]/60 group-hover:border-[#00e5ff] transition-colors pointer-events-none" />
+
+          {/* Subtle radial inner glow on hover */}
+          <div className="absolute -top-10 -right-10 w-52 h-52 rounded-full bg-[#0099ff]/15 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+          {/* Top: Big Glowing Icon */}
+          <div>
+            <div className="mb-7 sm:mb-8 flex items-center">
+              {card.icon}
+            </div>
+
+            {/* Title */}
+            <h3 className="font-sans text-xl sm:text-2xl lg:text-[22px] font-black tracking-wider text-white uppercase leading-tight drop-shadow-sm">
+              {card.title}
+            </h3>
+
+            {/* Description */}
+            <p className="mt-4 font-mono text-sm sm:text-base text-zinc-300 leading-relaxed font-normal">
+              {card.desc}
+            </p>
+          </div>
+
+          {/* Bottom: Arrow Link */}
+          <div className="mt-8 flex items-center pt-2">
+            <motion.div
+              animate={{ x: isHovered ? 8 : 0 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+              className="flex items-center text-[#0099ff] font-bold filter drop-shadow-[0_0_12px_rgba(0,153,255,0.9)]"
+            >
+              <ArrowRight className="h-6 w-6" strokeWidth={2.5} />
+            </motion.div>
+          </div>
+        </div>
+      </motion.div>
+    )
+  }
+
+  return (
+    <section className="relative w-full bg-[#02050e] py-16 sm:py-20 lg:py-28 text-white overflow-hidden">
+      {/* Background ambient lighting effects */}
+      <div
+        className="absolute top-1/4 left-10 h-[500px] w-[500px] rounded-full bg-[#0088ff]/12 blur-[150px] pointer-events-none"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute bottom-1/4 right-10 h-[500px] w-[500px] rounded-full bg-[#00c8ff]/10 blur-[160px] pointer-events-none"
+        aria-hidden="true"
+      />
+
+      <div className="relative z-10 mx-auto max-w-[1560px] px-6 sm:px-10 lg:px-14 xl:px-16">
+        {/* ============================================================ */}
+        {/* ROW 1: 3 CARDS (Wide Layout)                                 */}
+        {/* ============================================================ */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-60px' }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 xl:gap-12 mb-12 lg:mb-16"
+        >
+          {topCards.map((card) => renderCard(card))}
+        </motion.div>
+
+        {/* ============================================================ */}
+        {/* ROW 2: 2 CARDS CENTERED WITH FLANKING ASSETS (Wide Layout)   */}
+        {/* ============================================================ */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-60px' }}
+          className="relative flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-10 xl:gap-12"
+        >
+          {/* Left Flank Graphic: strong-community.png */}
+          <div className="relative hidden lg:flex flex-col items-center justify-center w-72 xl:w-80 select-none pointer-events-none">
+            <motion.div
+              animate={{ y: [0, -6, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+              className="relative h-68 w-60 xl:h-80 xl:w-72 filter drop-shadow-[0_0_24px_rgba(0,140,255,0.9)]"
+            >
+              <Image
+                src="/strong-community.png"
+                alt="Strong Community Builds Strong Projects"
+                fill
+                className="object-contain object-center"
+                priority
+              />
+            </motion.div>
+          </div>
+
+          {/* Center 2 Cards (Generously Wide) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 xl:gap-12 flex-1 max-w-4xl xl:max-w-[980px] 2xl:max-w-[1040px] w-full">
+            {bottomCards.map((card) => renderCard(card))}
+          </div>
+
+          {/* Right Flank Graphic: crown-icon.png and cross-icon.png */}
+          <div className="relative hidden lg:flex flex-col items-center justify-center w-72 xl:w-80 gap-6 select-none pointer-events-none">
+            {/* Crown Icon */}
+            <motion.div
+              animate={{ y: [0, -5, 0] }}
+              transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+              className="relative h-20 w-24 xl:h-24 xl:w-28 filter drop-shadow-[0_0_24px_rgba(0,140,255,0.95)]"
+            >
+              <Image
+                src="/crown-icon.png"
+                alt="Crown Icon"
+                fill
+                className="object-contain object-center"
+                priority
+              />
+            </motion.div>
+
+            {/* Cross Icon */}
+            <motion.div
+              animate={{ y: [0, 5, 0] }}
+              transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+              className="relative h-24 w-28 xl:h-28 xl:w-32 filter drop-shadow-[0_0_24px_rgba(0,140,255,0.95)]"
+            >
+              <Image
+                src="/cross-icon.png"
+                alt="Cross Icon"
+                fill
+                className="object-contain object-center"
+                priority
+              />
+            </motion.div>
+          </div>
+        </motion.div>
+
+        {/* Mobile View Flank Badges (Stacked underneath on small screens) */}
+        <div className="mt-12 flex lg:hidden items-center justify-around gap-6 select-none pointer-events-none">
+          <div className="relative h-40 w-36 filter drop-shadow-[0_0_18px_rgba(0,140,255,0.9)]">
+            <Image
+              src="/strong-community.png"
+              alt="Strong Community"
+              fill
+              className="object-contain object-center"
+            />
+          </div>
+          <div className="flex flex-col items-center gap-4">
+            <div className="relative h-16 w-18 filter drop-shadow-[0_0_18px_rgba(0,140,255,0.9)]">
+              <Image
+                src="/crown-icon.png"
+                alt="Crown"
+                fill
+                className="object-contain object-center"
+              />
+            </div>
+            <div className="relative h-18 w-20 filter drop-shadow-[0_0_18px_rgba(0,140,255,0.9)]">
+              <Image
+                src="/cross-icon.png"
+                alt="Cross"
+                fill
+                className="object-contain object-center"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
