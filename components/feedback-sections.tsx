@@ -120,6 +120,28 @@ export function FeedbackSections() {
     },
   ]
 
+  // Section 3: Ambassador & Collaborations (3 screenshots from public/ambassador)
+  const ambassadorItems: FeedbackItem[] = [
+    {
+      id: 'amb-1',
+      title: 'Aura World Direct Outreach & Roster',
+      platform: 'x',
+      imageSrc: '/ambassador/ambassador-feedback-1.jpg',
+    },
+    {
+      id: 'amb-2',
+      title: 'Quant AI Wave 1 Ambassador Program',
+      platform: 'telegram',
+      imageSrc: '/ambassador/ambassador-feedback-2.jpg',
+    },
+    {
+      id: 'amb-3',
+      title: 'AxioMarket Official Testnet Ambassador',
+      platform: 'telegram',
+      imageSrc: '/ambassador/ambassador-feedback-3.jpg',
+    },
+  ]
+
   const renderFeedbackCard = (item: FeedbackItem) => {
     const isHovered = hoveredCard === item.id
 
@@ -427,6 +449,59 @@ export function FeedbackSections() {
               YOUR SUPPORT<br />FUELS US
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ============================================================ */}
+      {/* SECTION 3: AMBASSADOR & COLLABORATIONS                       */}
+      {/* ============================================================ */}
+      <section className="relative z-10 pt-4 sm:pt-6 lg:pt-8 pb-16 sm:pb-20 lg:pb-24 border-t border-zinc-900/60">
+        <div className="mx-auto max-w-[1560px] px-6 sm:px-10 lg:px-14 xl:px-16">
+          {/* Header Row */}
+          <div className="mb-10 sm:mb-12 lg:mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <div className="flex flex-col items-start max-w-2xl">
+              <span className="mb-3 font-mono text-xs sm:text-sm font-semibold tracking-[0.25em] text-[#38bdf8] uppercase drop-shadow-[0_0_8px_rgba(56,189,248,0.7)]">
+                GLOBAL IMPACT / ECOSYSTEM EXPANSION
+              </span>
+
+              <div className="relative flex items-center gap-3">
+                <h2 className="font-['MasterVictory'] text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-normal leading-tight tracking-normal select-none">
+                  <span className="text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]">AMBASSADOR &amp; </span>
+                  <span className="text-[#0099ff] drop-shadow-[0_0_24px_rgba(0,140,255,0.9)]">COLLABORATIONS</span>
+                </h2>
+
+                {/* Crown Icon */}
+                <div className="relative h-10 w-12 sm:h-12 sm:w-14 filter drop-shadow-[0_0_18px_rgba(0,140,255,0.95)] -rotate-12 select-none pointer-events-none">
+                  <Image src="/crown-icon.png" alt="Crown" fill className="object-contain" />
+                </div>
+              </div>
+
+              <p className="mt-4 font-mono text-xs sm:text-sm text-zinc-300 max-w-xl leading-relaxed">
+                Representing AxioMarket, Quant AI, Aura World and more. Accelerating tier-1 Web3 protocols through high-converting ambassador initiatives, organic reach, and ecosystem partnerships.
+              </p>
+            </div>
+
+            {/* Top Right Sticker: TIER-1 ALLIANCES WORLDWIDE + Cross Icon */}
+            <div className="relative hidden md:flex flex-col items-end select-none pointer-events-none">
+              <div className="relative h-12 w-14 filter drop-shadow-[0_0_16px_rgba(0,140,255,0.95)] mb-1">
+                <Image src="/cross-icon.png" alt="Cross" fill className="object-contain" />
+              </div>
+              <div className="font-['MasterVictory'] text-xl sm:text-2xl lg:text-3xl text-[#0099ff] text-right -rotate-2 filter drop-shadow-[0_0_16px_rgba(0,140,255,0.9)]">
+                TIER-1 ALLIANCES<br />WORLDWIDE
+              </div>
+            </div>
+          </div>
+
+          {/* 3 Ambassador Feedback Cards */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-60px' }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 xl:gap-10"
+          >
+            {ambassadorItems.map((item) => renderFeedbackCard(item))}
+          </motion.div>
         </div>
       </section>
 
