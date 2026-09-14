@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     description:
       'Community Management, Influencer Marketing, Ambassador Programs, Raiding, and Strategic Advisory for Web3 projects.',
     images: ['/kachi-text-with-crown.png'],
-    creator: '@KachiFX12',
+    creator: '@Kachi_Base',
   },
   robots: {
     index: true,
@@ -130,7 +130,7 @@ const jsonLd = {
     'KOL and Influencer Outreach',
   ],
   sameAs: [
-    'https://x.com/KachiFX12',
+    'https://x.com/Kachi_Base',
     'https://t.me/KachiFX12',
   ],
 }

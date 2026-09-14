@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { Mail, Check, Copy } from 'lucide-react'
+import { Mail, Check, Copy, ExternalLink } from 'lucide-react'
 
 export function SocialSection() {
   const [copiedText, setCopiedText] = useState<string | null>(null)
@@ -81,15 +81,48 @@ export function SocialSection() {
           </h2>
 
           {/* Subtext */}
-          <p className="font-mono text-xs sm:text-sm md:text-base text-zinc-300 max-w-md leading-relaxed mb-8 sm:mb-10">
+          <p className="font-mono text-xs sm:text-sm md:text-base text-zinc-300 max-w-md leading-relaxed mb-6">
             Follow me on social media for updates, projects, and more.
           </p>
+
+          {/* Official Telegram Channel Banner */}
+          <motion.a
+            href="https://t.me/KachiFX1"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.02, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+            className="group relative flex items-center justify-between gap-3 w-full max-w-md p-3.5 sm:p-4 rounded-2xl bg-[#040814]/90 border-2 border-[#0099ff]/60 hover:border-[#00c8ff] transition-all duration-300 shadow-[0_0_20px_rgba(0,140,255,0.25)] hover:shadow-[0_0_30px_rgba(0,153,255,0.7)] mb-7 backdrop-blur-md"
+          >
+            <div className="flex items-center gap-3 min-w-0">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#0099ff]/20 border border-[#0099ff]/60 text-[#38bdf8] group-hover:bg-[#0099ff] group-hover:text-black transition-colors duration-300 shadow-[0_0_12px_rgba(0,153,255,0.4)]">
+                <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z" />
+                </svg>
+              </div>
+              <div className="flex flex-col min-w-0">
+                <div className="flex items-center gap-1.5 mb-0.5">
+                  <span className="inline-block h-2 w-2 rounded-full bg-[#00ffaa] animate-pulse shadow-[0_0_8px_#00ffaa]" />
+                  <span className="font-mono text-[10px] sm:text-xs text-[#38bdf8] uppercase tracking-wider font-semibold">
+                    OFFICIAL BROADCAST
+                  </span>
+                </div>
+                <span className="font-mono text-xs sm:text-sm font-bold text-white group-hover:text-[#38bdf8] transition-colors truncate">
+                  Follow Official Kachi Channel for Updates
+                </span>
+              </div>
+            </div>
+            <div className="flex items-center gap-1 font-mono text-[11px] sm:text-xs font-semibold text-[#38bdf8] shrink-0 group-hover:translate-x-1 transition-transform duration-200">
+              <span className="hidden sm:inline">Join</span>
+              <ExternalLink className="h-3.5 w-3.5" />
+            </div>
+          </motion.a>
 
           {/* Social Icons Bar (Matching Reference Visual) */}
           <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-8 sm:mb-10">
             {/* 1. X (Twitter) Button */}
             <motion.a
-              href="https://x.com/KachiFX12"
+              href="https://x.com/Kachi_Base"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ y: -4, scale: 1.08 }}
@@ -109,7 +142,8 @@ export function SocialSection() {
               rel="noopener noreferrer"
               whileHover={{ y: -4, scale: 1.08 }}
               whileTap={{ scale: 0.95 }}
-              aria-label="Telegram"
+              aria-label="Telegram DM (@KachiFX12)"
+              title="Telegram DM: @KachiFX12"
               className="group relative flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-2xl bg-[#040814]/90 border-2 border-[#0099ff] hover:border-[#00c8ff] text-[#0099ff] hover:text-white transition-colors duration-300 shadow-[0_0_15px_rgba(0,140,255,0.45)] hover:shadow-[0_0_25px_rgba(0,153,255,0.95)]"
             >
               <svg viewBox="0 0 24 24" className="h-5 w-5 sm:h-6 sm:w-6 fill-current">

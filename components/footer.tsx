@@ -35,7 +35,7 @@ export function Footer() {
           <div className="flex items-center gap-3">
             {/* X (Twitter) */}
             <a
-              href="https://x.com/KachiFX12"
+              href="https://x.com/Kachi_Base"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="X (Twitter)"

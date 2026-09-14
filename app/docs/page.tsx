@@ -535,7 +535,7 @@ export default function DocsPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {/* 1. X (Twitter) */}
               <a
-                href="https://x.com/KachiFX12"
+                href="https://x.com/Kachi_Base"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-5 rounded-2xl bg-black/60 border border-zinc-800 hover:border-[#0099ff] hover:bg-[#0099ff]/10 transition-all flex flex-col justify-between group"
@@ -549,7 +549,7 @@ export default function DocsPage() {
                   </div>
                   <span className="font-mono text-xs text-zinc-400">Twitter / X</span>
                   <h4 className="font-mono text-sm font-bold text-white group-hover:text-[#0099ff] transition-colors mt-0.5">
-                    @KachiFX12
+                    @Kachi_Base
                   </h4>
                 </div>
                 <span className="mt-4 font-mono text-[11px] text-[#38bdf8]">Message on X &rarr;</span>
