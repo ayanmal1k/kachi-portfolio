@@ -214,6 +214,43 @@ export default function DocsPage() {
     },
   ]
 
+  // Verified ambassador program acceptances directly from official emails & leadership DMs
+  const ambassadorProofs = [
+    {
+      number: '01',
+      project: 'Quant AI',
+      role: 'Wave 1 Ambassador',
+      issuer: 'Bartosz Bury (@Bartorinho)',
+      badge: 'OFFICIAL EMAIL ACCEPTANCE',
+      image: '/ambassador/ambassador-feedback-2.jpg',
+      quote:
+        "You've been accepted into the Quant AI Ambassador Program and are now part of the first wave helping build momentum around Quant AI.",
+      desc: 'Selected for the exclusive Wave 1 cohort to steer official content directions, priority whitelist allocations, and early-stage momentum.',
+    },
+    {
+      number: '02',
+      project: 'AxioMarket',
+      role: 'Official Ambassador',
+      issuer: 'AxioMarket Operations',
+      badge: 'TESTNET ROLLOUT VERIFIED',
+      image: '/ambassador/ambassador-feedback-3.jpg',
+      quote:
+        "Welcome, and congratulations on becoming an official ambassador. We're excited to have you on board and look forward to building with you.",
+      desc: 'Appointed during AxioMarket live testnet rollout to drive early user testing, feedback loops, and decentralized marketplace adoption.',
+    },
+    {
+      number: '03',
+      project: 'Aura World',
+      role: 'Ecosystem Ambassador',
+      issuer: 'Aura World Leadership (@raworld)',
+      badge: 'FOUNDER DIRECT OUTREACH',
+      image: '/ambassador/ambassador-feedback-1.jpg',
+      quote:
+        'raworld: "Hello how are you? We are thinking of bringing you in are you interested" — Kachi: "Yes man I\'m interested"',
+      desc: 'Direct founder outreach and personal invitation to represent the brand, onboard builders, and spearhead community growth.',
+    },
+  ]
+
   // Verified quotes from actual developer and community chat screenshots
   const verifiedReceipts = [
     {
@@ -462,12 +499,78 @@ export default function DocsPage() {
         </section>
 
         {/* ============================================================ */}
-        {/* SECTION 4: CLIENT & DEVELOPER TESTIMONIALS                   */}
+        {/* SECTION 4: OFFICIAL AMBASSADOR PROOFS                        */}
+        {/* ============================================================ */}
+        <section className="mb-16">
+          <div className="mb-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
+            <div>
+              <span className="font-mono text-xs text-[#38bdf8] uppercase tracking-[0.2em] font-semibold">
+                // 04 AMBASSADOR PROOFS
+              </span>
+              <h2 className="font-['MasterVictory'] text-3xl sm:text-4xl text-white mt-2">
+                OFFICIAL AMBASSADOR PROOFS
+              </h2>
+            </div>
+            <span className="font-mono text-xs text-zinc-400">
+              [ 3 VERIFIED PROGRAM RECEIPTS ]
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {ambassadorProofs.map((amb) => (
+              <div
+                key={amb.number}
+                className="group rounded-2xl bg-[#040814]/90 border border-zinc-800/80 p-4 hover:border-[#0099ff] transition-all flex flex-col justify-between shadow-[0_4px_20px_rgba(0,0,0,0.6)] hover:shadow-[0_0_24px_rgba(0,153,255,0.3)]"
+              >
+                <div>
+                  <div className="relative w-full h-52 overflow-hidden rounded-xl bg-black border border-zinc-800/80 mb-3">
+                    <Image
+                      src={amb.image}
+                      alt={`${amb.project} Ambassador Proof`}
+                      fill
+                      className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+
+                  <div className="flex items-center justify-between text-[10px] font-mono text-zinc-400 mb-1.5">
+                    <span className="text-[#38bdf8] font-bold">{amb.badge}</span>
+                    <span className="text-zinc-500">{amb.issuer}</span>
+                  </div>
+
+                  <h4 className="font-mono text-base font-bold text-white mb-2 group-hover:text-[#0099ff] transition-colors leading-tight">
+                    {amb.project}
+                  </h4>
+
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#0099ff]/15 border border-[#0099ff]/40 text-[#38bdf8] font-mono text-[11px] font-bold mb-3">
+                    <span>ROLE:</span>
+                    <span className="text-white">{amb.role}</span>
+                  </div>
+
+                  <p className="font-mono text-[11px] text-zinc-300 leading-relaxed mb-3">
+                    {amb.desc}
+                  </p>
+
+                  <div className="p-3 rounded-lg bg-black/60 border border-zinc-800/80 text-[11px] font-mono text-zinc-400 italic">
+                    &ldquo;{amb.quote}&rdquo;
+                  </div>
+                </div>
+
+                <div className="mt-4 pt-3 border-t border-zinc-800/70 flex items-center justify-between font-mono text-[10px] text-zinc-500">
+                  <span>Documented Receipt</span>
+                  <span className="text-emerald-400 font-semibold">VERIFIED</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ============================================================ */}
+        {/* SECTION 5: CLIENT & DEVELOPER TESTIMONIALS                   */}
         {/* ============================================================ */}
         <section className="mb-16">
           <div className="mb-8">
             <span className="font-mono text-xs text-[#38bdf8] uppercase tracking-[0.2em] font-semibold">
-              // 04 CLIENT &amp; DEVELOPER FEEDBACK
+              // 05 CLIENT &amp; DEVELOPER FEEDBACK
             </span>
             <h2 className="font-['MasterVictory'] text-3xl sm:text-4xl text-white mt-2">
               WHAT PEOPLE SAY ABOUT KACHI
@@ -515,13 +618,13 @@ export default function DocsPage() {
         </section>
 
         {/* ============================================================ */}
-        {/* SECTION 5: HOW TO WORK WITH KACHI (APPROACH ON ANY SOCIAL)   */}
+        {/* SECTION 6: HOW TO WORK WITH KACHI (APPROACH ON ANY SOCIAL)   */}
         {/* ============================================================ */}
         <section id="contact-kachi" className="mb-16">
           <div className="rounded-3xl bg-[#040814]/95 border-2 border-[#0099ff]/50 p-8 sm:p-12 shadow-[0_0_35px_rgba(0,153,255,0.25)] relative overflow-hidden">
             <div className="max-w-3xl mb-8">
               <span className="font-mono text-xs text-[#38bdf8] uppercase tracking-[0.2em] font-semibold">
-                // 05 HOW TO WORK WITH KACHI
+                // 06 HOW TO WORK WITH KACHI
               </span>
               <h2 className="font-['MasterVictory'] text-3xl sm:text-5xl text-white mt-2 mb-3">
                 LET&apos;S WORK TOGETHER
