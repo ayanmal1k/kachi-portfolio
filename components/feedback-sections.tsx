@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence, type Variants } from 'framer-motion'
-import { X, ZoomIn } from 'lucide-react'
+import { X, ZoomIn, Bot, Sparkles, MessageSquare } from 'lucide-react'
 
 interface FeedbackItem {
   id: string
@@ -15,6 +15,27 @@ interface FeedbackItem {
 export function FeedbackSections() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
   const [hoveredCard, setHoveredCard] = useState<string | null>(null)
+
+  const openKachiAI = () => {
+    const bubble = document.getElementById('webagent-chat-bubble')
+    if (bubble) {
+      bubble.click()
+      return
+    }
+    const welcome = document.getElementById('webagent-welcome-message')
+    if (welcome) {
+      welcome.click()
+      return
+    }
+    const iframe = document.getElementById('webagent-iframe') as HTMLElement | null
+    if (iframe) {
+      iframe.style.opacity = '1'
+      iframe.style.transform = 'scale(1)'
+      iframe.style.bottom = window.innerWidth < 640 ? '0px' : '90px'
+      iframe.style.height = window.innerWidth < 640 ? '100%' : '85vh'
+      iframe.style.display = 'block'
+    }
+  }
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -244,6 +265,47 @@ export function FeedbackSections() {
           </motion.div>
         </div>
       </section>
+
+      {/* ============================================================ */}
+      {/* MID-SECTION BANNER: KACHI AI ASSISTANT                       */}
+      {/* ============================================================ */}
+      <div className="relative z-10 mx-auto max-w-[1560px] px-6 sm:px-10 lg:px-14 xl:px-16 my-4 sm:my-6">
+        <div className="relative overflow-hidden rounded-2xl bg-[#040814]/90 border border-[#0099ff]/40 hover:border-[#0099ff] p-6 sm:p-8 backdrop-blur-xl shadow-[0_0_30px_rgba(0,153,255,0.2)] transition-all">
+          {/* Subtle Ambient Glows */}
+          <div className="absolute -top-10 right-1/4 h-36 w-72 bg-[#0099ff]/15 blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-10 left-1/4 h-36 w-72 bg-[#00d2ff]/12 blur-3xl pointer-events-none" />
+
+          <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div className="flex flex-col items-start max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0099ff]/15 border border-[#0099ff]/35 text-[#38bdf8] font-mono text-[11px] font-bold uppercase tracking-wider mb-2.5">
+                <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                <Sparkles className="h-3.5 w-3.5 text-[#00d2ff]" />
+                <span>KACHI AI // 24/7 INTERACTIVE AGENT</span>
+              </div>
+
+              <h3 className="font-['MasterVictory'] text-2xl sm:text-3xl lg:text-4xl text-white tracking-wide">
+                HAVE QUESTIONS? <span className="text-[#0099ff] drop-shadow-[0_0_20px_rgba(0,140,255,0.9)]">ASK KACHI AI</span>
+              </h3>
+
+              <p className="mt-2 font-mono text-xs sm:text-sm text-zinc-300 leading-relaxed max-w-xl">
+                Ask anything you need to know about Kachi — his verified track record, role capabilities, project experience, or how to hire him to scale and grow your community.
+              </p>
+            </div>
+
+            <div className="flex-shrink-0">
+              <button
+                type="button"
+                onClick={openKachiAI}
+                className="group relative inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#0099ff] hover:bg-[#00c8ff] text-black font-mono text-xs sm:text-sm font-bold tracking-wide transition-all shadow-[0_0_20px_rgba(0,153,255,0.6)] hover:shadow-[0_0_30px_rgba(0,200,255,0.9)] hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+              >
+                <Bot className="h-4 w-4 text-black transition-transform group-hover:rotate-12" />
+                <span>CHAT WITH KACHI AI</span>
+                <MessageSquare className="h-3.5 w-3.5 opacity-80" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* ============================================================ */}
       {/* SECTION 2: COMMUNITY FEEDBACK                                */}

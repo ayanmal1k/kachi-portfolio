@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next'
+import Script from 'next/script'
 import { Geist, Geist_Mono, Syne } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { LenisProvider } from '@/components/lenis-provider'
@@ -154,6 +155,11 @@ export default function RootLayout({
           {children}
         </LenisProvider>
         <Analytics />
+        <Script
+          id="webagent-chatbot"
+          src="https://webagent.ai/api/chatbot/5ab1a3dd-26ed-416a-98b4-ffd52d8b0ac4"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   )
