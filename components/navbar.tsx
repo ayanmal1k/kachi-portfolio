@@ -5,6 +5,15 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 export function Navbar() {
+  const handleScrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const el = document.getElementById('contact') || document.getElementById('social')
+    if (el) {
+      e.preventDefault()
+      el.scrollIntoView({ behavior: 'smooth' })
+      window.history.pushState(null, '', '#contact')
+    }
+  }
+
   return (
     <header className="relative z-30 w-full bg-[#030712] border-b border-zinc-900/80">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 sm:px-10">
@@ -34,15 +43,9 @@ export function Navbar() {
           className="flex items-center gap-3 sm:gap-4"
         >
           <Link
-            href="/docs"
-            className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-[#0099ff]/40 bg-[#0099ff]/10 text-xs font-mono font-semibold text-[#38bdf8] hover:bg-[#0099ff]/25 hover:text-white hover:border-[#00e5ff] transition-all shadow-[0_0_12px_rgba(0,153,255,0.25)]"
-          >
-            <span>DOCS // SPEC</span>
-          </Link>
-
-          <Link
             href="/#contact"
-            className="px-4 py-1.5 rounded-lg bg-[#0099ff] hover:bg-[#00c8ff] text-black text-xs font-mono font-bold tracking-wide transition-colors shadow-[0_0_15px_rgba(0,153,255,0.5)]"
+            onClick={handleScrollToContact}
+            className="px-4 py-1.5 rounded-lg bg-[#0099ff] hover:bg-[#00c8ff] text-black text-xs font-mono font-bold tracking-wide transition-colors shadow-[0_0_15px_rgba(0,153,255,0.5)] cursor-pointer"
           >
             LET&apos;S WORK
           </Link>

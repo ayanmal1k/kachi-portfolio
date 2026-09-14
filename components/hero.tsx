@@ -8,6 +8,15 @@ import { ArrowRight } from 'lucide-react'
 export function HeroSection() {
   const [isHovered, setIsHovered] = useState(false)
 
+  const handleScrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const el = document.getElementById('contact') || document.getElementById('social')
+    if (el) {
+      e.preventDefault()
+      el.scrollIntoView({ behavior: 'smooth' })
+      window.history.pushState(null, '', '#contact')
+    }
+  }
+
   // Motion variants with spring physics
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -144,6 +153,7 @@ export function HeroSection() {
             {/* The Cut-Corner Chamfered Button */}
             <motion.a
               href="#contact"
+              onClick={handleScrollToContact}
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
               whileHover={{ scale: 1.04 }}
