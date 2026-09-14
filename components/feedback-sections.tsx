@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence, type Variants } from 'framer-motion'
-import { X, ZoomIn, Bot, Sparkles, MessageSquare } from 'lucide-react'
+import { X, ZoomIn, Bot, MessageSquare } from 'lucide-react'
 
 interface FeedbackItem {
   id: string
@@ -277,12 +277,6 @@ export function FeedbackSections() {
 
           <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div className="flex flex-col items-start max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0099ff]/15 border border-[#0099ff]/35 text-[#38bdf8] font-mono text-[11px] font-bold uppercase tracking-wider mb-2.5">
-                <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-                <Sparkles className="h-3.5 w-3.5 text-[#00d2ff]" />
-                <span>KACHI AI // 24/7 INTERACTIVE AGENT</span>
-              </div>
-
               <h3 className="font-['MasterVictory'] text-2xl sm:text-3xl lg:text-4xl text-white tracking-wide">
                 HAVE QUESTIONS? <span className="text-[#0099ff] drop-shadow-[0_0_20px_rgba(0,140,255,0.9)]">ASK KACHI AI</span>
               </h3>
