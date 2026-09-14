@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://kachi.live'
+  const baseUrl = 'https://kachi-web3.netlify.app'
   const currentDate = new Date()
 
   return [

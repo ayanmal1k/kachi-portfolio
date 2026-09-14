@@ -28,7 +28,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://kachi.live'),
+  metadataBase: new URL('https://kachi-web3.netlify.app'),
   title: {
     default: 'Kachi — Web3 Growth Partner & Community Architect',
     template: '%s | Kachi',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   description:
     'Official portfolio of Kachi — Web3 Growth Partner specializing in Community Management, Moderation, Influencer & KOL Marketing, Ambassador Guilds, Raiding & Shilling, and Strategic Advisory.',
   applicationName: 'Kachi Portfolio',
-  authors: [{ name: 'Kachi', url: 'https://kachi.live' }],
+  authors: [{ name: 'Kachi', url: 'https://kachi-web3.netlify.app' }],
   generator: 'Next.js',
   keywords: [
     'Kachi',
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://kachi.live',
+    url: 'https://kachi-web3.netlify.app',
     siteName: 'Kachi — Web3 Growth Partner',
     title: 'Kachi — Web3 Growth Partner & Community Architect',
     description:
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
     description:
       'Community Management, Influencer Marketing, Ambassador Programs, Raiding, and Strategic Advisory for Web3 projects.',
     images: ['/kachi-text-with-crown.png'],
-    creator: '@Kachi',
+    creator: '@Kachi_Base',
   },
   robots: {
     index: true,
@@ -113,8 +113,8 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Kachi',
-  url: 'https://kachi.live',
-  image: 'https://kachi.live/kachi-text-with-crown.png',
+  url: 'https://kachi-web3.netlify.app',
+  image: 'https://kachi-web3.netlify.app/kachi-text-with-crown.png',
   jobTitle: 'Web3 Growth Partner & Community Architect',
   description:
     'Web3 Growth Partner specializing in Community Management, Moderation, Influencer Marketing, Ambassador Programs, Raiding & Shilling, and Strategic Advisory.',
@@ -129,8 +129,8 @@ const jsonLd = {
     'KOL and Influencer Outreach',
   ],
   sameAs: [
-    'https://x.com',
-    'https://t.me',
+    'https://x.com/Kachi_Base',
+    'https://t.me/Kachi_Base',
   ],
 }
 
