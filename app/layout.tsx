@@ -131,6 +131,7 @@ const jsonLd = {
   ],
   sameAs: [
     'https://x.com/Kachi_Base',
+    'https://t.me/KachiFX1',
     'https://t.me/KachiFX12',
   ],
 }

@@ -556,12 +556,7 @@ export default function DocsPage() {
               </a>
 
               {/* 2. Telegram */}
-              <a
-                href="https://t.me/KachiFX12"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-5 rounded-2xl bg-black/60 border border-zinc-800 hover:border-[#0099ff] hover:bg-[#0099ff]/10 transition-all flex flex-col justify-between group"
-              >
+              <div className="p-5 rounded-2xl bg-black/60 border border-zinc-800 hover:border-[#0099ff] hover:bg-[#0099ff]/10 transition-all flex flex-col justify-between group">
                 <div>
                   <div className="flex items-center justify-between mb-3 text-zinc-400 group-hover:text-[#0099ff]">
                     <svg viewBox="0 0 24 24" className="h-6 w-6 fill-current">
@@ -574,8 +569,27 @@ export default function DocsPage() {
                     @KachiFX12
                   </h4>
                 </div>
-                <span className="mt-4 font-mono text-[11px] text-[#38bdf8]">Message on TG &rarr;</span>
-              </a>
+                <div className="mt-4 flex flex-col gap-1.5 font-mono text-[11px]">
+                  <a
+                    href="https://t.me/KachiFX1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#38bdf8] hover:underline flex items-center justify-between"
+                  >
+                    <span>Official Channel &rarr;</span>
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
+                  <a
+                    href="https://t.me/KachiFX12"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-zinc-400 hover:text-white flex items-center justify-between"
+                  >
+                    <span>Message DM &rarr;</span>
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
+                </div>
+              </div>
 
               {/* 3. Discord */}
               <div className="p-5 rounded-2xl bg-black/60 border border-zinc-800 flex flex-col justify-between group">
@@ -633,12 +647,21 @@ export default function DocsPage() {
               VIEW MAIN PORTFOLIO
             </Link>
             <a
+              href="https://t.me/KachiFX1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2.5 rounded-xl bg-[#0099ff] text-black font-mono text-xs font-bold hover:bg-[#38bdf8] transition-colors inline-flex items-center gap-2"
+            >
+              <span>OFFICIAL CHANNEL: @KachiFX1</span>
+              <ExternalLink className="h-3.5 w-3.5" />
+            </a>
+            <a
               href="https://t.me/KachiFX12"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-2.5 rounded-xl bg-[#040814] border border-[#0099ff]/60 text-[#38bdf8] font-mono text-xs font-bold hover:bg-[#0099ff]/20 transition-colors inline-flex items-center gap-2"
             >
-              <span>TELEGRAM: @KachiFX12</span>
+              <span>TELEGRAM DM: @KachiFX12</span>
               <ExternalLink className="h-3.5 w-3.5" />
             </a>
           </div>
