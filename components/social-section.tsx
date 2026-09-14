@@ -89,7 +89,7 @@ export function SocialSection() {
           <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-8 sm:mb-10">
             {/* 1. X (Twitter) Button */}
             <motion.a
-              href="https://x.com/Kachi_Base"
+              href="https://x.com/KachiFX12"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ y: -4, scale: 1.08 }}
@@ -104,7 +104,7 @@ export function SocialSection() {
 
             {/* 2. Telegram Button */}
             <motion.a
-              href="https://t.me/Kachi_Base"
+              href="https://t.me/KachiFX12"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ y: -4, scale: 1.08 }}

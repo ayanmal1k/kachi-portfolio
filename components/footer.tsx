@@ -35,7 +35,7 @@ export function Footer() {
           <div className="flex items-center gap-3">
             {/* X (Twitter) */}
             <a
-              href="https://x.com/Kachi_Base"
+              href="https://x.com/KachiFX12"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="X (Twitter)"
@@ -48,7 +48,7 @@ export function Footer() {
 
             {/* Telegram */}
             <a
-              href="https://t.me/Kachi_Base"
+              href="https://t.me/KachiFX12"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Telegram"

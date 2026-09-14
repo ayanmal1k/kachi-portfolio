@@ -535,7 +535,7 @@ export default function DocsPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {/* 1. X (Twitter) */}
               <a
-                href="https://x.com/Kachi_Base"
+                href="https://x.com/KachiFX12"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-5 rounded-2xl bg-black/60 border border-zinc-800 hover:border-[#0099ff] hover:bg-[#0099ff]/10 transition-all flex flex-col justify-between group"
@@ -549,7 +549,7 @@ export default function DocsPage() {
                   </div>
                   <span className="font-mono text-xs text-zinc-400">Twitter / X</span>
                   <h4 className="font-mono text-sm font-bold text-white group-hover:text-[#0099ff] transition-colors mt-0.5">
-                    @Kachi_Base
+                    @KachiFX12
                   </h4>
                 </div>
                 <span className="mt-4 font-mono text-[11px] text-[#38bdf8]">Message on X &rarr;</span>
@@ -557,7 +557,7 @@ export default function DocsPage() {
 
               {/* 2. Telegram */}
               <a
-                href="https://t.me/Kachi_Base"
+                href="https://t.me/KachiFX12"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-5 rounded-2xl bg-black/60 border border-zinc-800 hover:border-[#0099ff] hover:bg-[#0099ff]/10 transition-all flex flex-col justify-between group"
@@ -571,7 +571,7 @@ export default function DocsPage() {
                   </div>
                   <span className="font-mono text-xs text-zinc-400">Telegram</span>
                   <h4 className="font-mono text-sm font-bold text-white group-hover:text-[#0099ff] transition-colors mt-0.5">
-                    @Kachi_Base
+                    @KachiFX12
                   </h4>
                 </div>
                 <span className="mt-4 font-mono text-[11px] text-[#38bdf8]">Message on TG &rarr;</span>
@@ -633,12 +633,12 @@ export default function DocsPage() {
               VIEW MAIN PORTFOLIO
             </Link>
             <a
-              href="https://t.me/Kachi_Base"
+              href="https://t.me/KachiFX12"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-2.5 rounded-xl bg-[#040814] border border-[#0099ff]/60 text-[#38bdf8] font-mono text-xs font-bold hover:bg-[#0099ff]/20 transition-colors inline-flex items-center gap-2"
             >
-              <span>TELEGRAM: @Kachi_Base</span>
+              <span>TELEGRAM: @KachiFX12</span>
               <ExternalLink className="h-3.5 w-3.5" />
             </a>
           </div>
