@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { Mail, Check, Copy, ExternalLink } from 'lucide-react'
+import { Mail, Check, Copy, ExternalLink, Download } from 'lucide-react'
 
 export function SocialSection() {
   const [copiedText, setCopiedText] = useState<string | null>(null)
@@ -194,7 +194,64 @@ export function SocialSection() {
                 <Copy className="h-5 w-5 sm:h-6 sm:w-6" />
               )}
             </motion.button>
+
+            {/* 6. Download Resume Quick Button */}
+            <motion.a
+              href="/Kachi_Resume.pdf"
+              download="Kachi_Resume.pdf"
+              whileHover={{ y: -4, scale: 1.08 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="Download Resume (PDF)"
+              title="One-Click Download Kachi's Resume"
+              className="group relative flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-2xl bg-[#040814]/90 border-2 border-[#0099ff] hover:border-[#00c8ff] text-[#0099ff] hover:text-white transition-colors duration-300 shadow-[0_0_15px_rgba(0,140,255,0.45)] hover:shadow-[0_0_25px_rgba(0,153,255,0.95)] cursor-pointer"
+            >
+              <motion.div
+                animate={{ y: [0, -2, 0] }}
+                transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
+              >
+                <Download className="h-5 w-5 sm:h-6 sm:w-6" />
+              </motion.div>
+            </motion.a>
           </div>
+
+          {/* Download Resume Dedicated Action Card */}
+          <motion.a
+            href="/Kachi_Resume.pdf"
+            download="Kachi_Resume.pdf"
+            whileHover={{ scale: 1.02, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+            className="group relative flex items-center justify-between gap-3 w-full max-w-md p-3.5 sm:p-4 rounded-2xl bg-gradient-to-r from-[#0099ff]/20 via-[#0066ff]/15 to-[#0099ff]/10 border-2 border-[#0099ff]/70 hover:border-[#00c8ff] transition-all duration-300 shadow-[0_0_25px_rgba(0,140,255,0.3)] hover:shadow-[0_0_35px_rgba(0,153,255,0.8)] mb-8 overflow-hidden backdrop-blur-md"
+          >
+            {/* Shimmer sweep animation */}
+            <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/15 to-transparent transition-transform duration-1000 ease-in-out pointer-events-none" />
+
+            <div className="flex items-center gap-3 min-w-0">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#0099ff] text-black group-hover:bg-[#38bdf8] transition-colors duration-300 shadow-[0_0_15px_rgba(0,153,255,0.6)]">
+                <motion.div
+                  animate={{ y: [0, -2.5, 0] }}
+                  transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
+                >
+                  <Download className="h-5 w-5" />
+                </motion.div>
+              </div>
+              <div className="flex flex-col min-w-0">
+                <div className="flex items-center gap-1.5 mb-0.5">
+                  <span className="inline-block h-2 w-2 rounded-full bg-[#00ffaa] animate-pulse shadow-[0_0_8px_#00ffaa]" />
+                  <span className="font-mono text-[10px] sm:text-xs text-[#38bdf8] uppercase tracking-wider font-semibold">
+                    CURRICULUM VITAE
+                  </span>
+                </div>
+                <span className="font-mono text-xs sm:text-sm font-bold text-white group-hover:text-[#38bdf8] transition-colors truncate">
+                  Download Kachi&apos;s Resume
+                </span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0099ff]/20 border border-[#0099ff]/60 text-[#38bdf8] group-hover:bg-[#0099ff] group-hover:text-black font-mono text-[11px] sm:text-xs font-bold shrink-0 transition-all duration-300">
+              <span>PDF</span>
+              <Download className="h-3.5 w-3.5" />
+            </div>
+          </motion.a>
 
           {/* Feedback Toast if Copied */}
           {copiedText && (

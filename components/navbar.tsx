@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { Download } from 'lucide-react'
 
 export function Navbar() {
   const handleScrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -35,13 +36,31 @@ export function Navbar() {
           </div>
         </motion.div>
 
-        {/* Right: Nav Links + Menu Button */}
+        {/* Right: Nav Links + Actions */}
         <motion.div
           initial={{ opacity: 0, x: 16 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="flex items-center gap-3 sm:gap-4"
+          className="flex items-center gap-2.5 sm:gap-4"
         >
+          {/* One-Click Download Resume Button */}
+          <motion.a
+            href="/Kachi_Resume.pdf"
+            download="Kachi_Resume.pdf"
+            whileHover={{ scale: 1.05, y: -1 }}
+            whileTap={{ scale: 0.95 }}
+            title="One-Click Download Kachi's Resume"
+            className="group relative inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-lg bg-[#040814]/90 border border-[#0099ff]/50 hover:border-[#00c8ff] text-[#38bdf8] hover:text-white text-xs font-mono font-bold tracking-wide transition-all duration-200 shadow-[0_0_12px_rgba(0,153,255,0.25)] hover:shadow-[0_0_20px_rgba(0,153,255,0.7)]"
+          >
+            <motion.div
+              animate={{ y: [0, -2, 0] }}
+              transition={{ repeat: Infinity, duration: 1.6, ease: 'easeInOut' }}
+            >
+              <Download className="h-3.5 w-3.5 text-[#0099ff] group-hover:text-[#38bdf8] transition-colors" />
+            </motion.div>
+            <span>RESUME</span>
+          </motion.a>
+
           <Link
             href="/#contact"
             onClick={handleScrollToContact}
