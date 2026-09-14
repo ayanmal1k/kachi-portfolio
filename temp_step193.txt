@@ -1,0 +1,184 @@
+Created At: 2026-09-14T18:30:57+05:00
+Completed At: 2026-09-14T18:30:57+05:00
+File Path: `file:///b:/Kachi%20portfolio/components/feedback-sections.tsx`
+Total Lines: 422
+Total Bytes: 18028
+Showing lines 195 to 370
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+195:       />
+196: 
+197:       {/* ============================================================ */}
+198:       {/* SECTION 1: DEVELOPER FEEDBACK                                */}
+199:       {/* ============================================================ */}
+200:       <section className="relative z-10 py-12 sm:py-16 lg:py-20">
+201:         <div className="mx-auto max-w-5xl px-6 sm:px-8">
+202:           {/* Header Row */}
+203:           <div className="mb-8 sm:mb-10 lg:mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+204:             <div className="flex flex-col items-start max-w-xl">
+205:               <span className="mb-2 font-mono text-xs sm:text-sm font-semibold tracking-[0.25em] text-[#38bdf8] uppercase drop-shadow-[0_0_8px_rgba(56,189,248,0.7)]">
+206:                 REAL PEOPLE / REAL FEEDBACK
+207:               </span>
+208: 
+209:               <div className="relative flex items-center gap-3">
+210:                 <h2 className="font-['MasterVictory'] text-3xl sm:text-4xl lg:text-5xl font-normal leading-tight tracking-normal select-none">
+211:                   <span className="text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]">DEVELOPER </span>
+212:                   <span className="text-[#0099ff] drop-shadow-[0_0_24px_rgba(0,140,255,0.9)]">FEEDBACK</span>
+213:                 </h2>
+214: 
+215:                 {/* Crown Icon next to title */}
+216:                 <div className="relative h-8 w-10 sm:h-10 sm:w-12 filter drop-shadow-[0_0_16px_rgba(0,140,255,0.95)] -rotate-12 select-none pointer-events-none">
+217:                   <Image src="/crown-icon.png" alt="Crown" fill className="object-contain" />
+218:                 </div>
+219:               </div>
+220: 
+221:               <p className="mt-3 font-mono text-xs sm:text-sm text-zinc-300 max-w-md leading-relaxed">
+222:                 Builders, founders and devs who&apos;ve worked with us. Here&apos;s what they had to say.
+223:               </p>
+224:             </div>
+225: 
+226:             {/* Top Right Sticker: TRUSTED BY BUILDERS WORLDWIDE + Cross Icon */}
+227:             <div className="relative hidden md:flex flex-col items-end select-none pointer-events-none">
+228:               <div className="relative h-10 w-12 filter drop-shadow-[0_0_14px_rgba(0,140,255,0.95)] mb-1">
+229:                 <Image src="/cross-icon.png" alt="Cross" fill className="object-contain" />
+230:               </div>
+231:               <div className="font-['MasterVictory'] text-lg sm:text-xl lg:text-2xl text-[#0099ff] text-right -rotate-3 filter drop-shadow-[0_0_14px_rgba(0,140,255,0.9)]">
+232:                 TRUSTED BY BUILDERS<br />WORLDWIDE
+233:               </div>
+234:             </div>
+235:           </div>
+236: 
+237:           {/* 3 Developer Feedback Cards */}
+238:           <motion.div
+239:             variants={containerVariants}
+240:             initial="hidden"
+241:             whileInView="visible"
+242:             viewport={{ once: true, margin: '-60px' }}
+243:             className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6"
+244:           >
+245:             {devFeedbackItems.map((item) => renderFeedbackCard(item))}
+246:           </motion.div>
+247:         </div>
+248:       </section>
+249: 
+250:       {/* ============================================================ */}
+251:       {/* SECTION 2: COMMUNITY FEEDBACK                                */}
+252:       {/* ============================================================ */}
+253:       <section className="relative z-10 pt-4 sm:pt-6 lg:pt-8 pb-14 sm:pb-18 lg:pb-20">
+254:         <div className="mx-auto max-w-5xl px-6 sm:px-8">
+255:           {/* Header Row */}
+256:           <div className="mb-8 sm:mb-10 lg:mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+257:             <div className="flex flex-col items-start max-w-xl">
+258:               <span className="mb-2 font-mono text-xs sm:text-sm font-semibold tracking-[0.25em] text-[#38bdf8] uppercase drop-shadow-[0_0_8px_rgba(56,189,248,0.7)]">
+259:                 COMMUNITY VOICES
+260:               </span>
+261: 
+262:               <h2 className="font-['MasterVictory'] text-3xl sm:text-4xl lg:text-5xl font-normal leading-tight tracking-normal select-none">
+263:                 <span className="text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]">COMMUNITY </span>
+264:                 <span className="text-[#0099ff] drop-shadow-[0_0_24px_rgba(0,140,255,0.9)]">FEEDBACK</span>
+265:               </h2>
+266: 
+267:               <p className="mt-3 font-mono text-xs sm:text-sm text-zinc-300 max-w-md leading-relaxed">
+268:                 From active members to long-time supporters, our community keeps the energy alive.
+269:               </p>
+270:             </div>
+271: 
+272:             {/* Top Right Sticker: REAL PEOPLE REAL SUPPORT with Crown */}
+273:             <div className="relative hidden md:flex flex-col items-end select-none pointer-events-none">
+274:               <div className="relative h-10 w-12 filter drop-shadow-[0_0_16px_rgba(0,140,255,0.95)] mb-1 rotate-6">
+275:                 <Image src="/crown-icon.png" alt="Crown" fill className="object-contain" />
+276:               </div>
+277:               <div className="font-['MasterVictory'] text-lg sm:text-xl lg:text-2xl text-[#0099ff] text-right rotate-2 filter drop-shadow-[0_0_14px_rgba(0,140,255,0.9)]">
+278:                 REAL PEOPLE<br />REAL SUPPORT
+279:               </div>
+280:             </div>
+281:           </div>
+282: 
+283:           {/* ROW 1: 3 CARDS */}
+284:           <motion.div
+285:             variants={containerVariants}
+286:             initial="hidden"
+287:             whileInView="visible"
+288:             viewport={{ once: true, margin: '-60px' }}
+289:             className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6 mb-8 sm:mb-10"
+290:           >
+291:             {communityTopItems.map((item) => renderFeedbackCard(item))}
+292:           </motion.div>
+293: 
+294:           {/* ROW 2: 2 CARDS CENTERED WITH FLANKING ASSETS */}
+295:           <motion.div
+296:             variants={containerVariants}
+297:             initial="hidden"
+298:             whileInView="visible"
+299:             viewport={{ once: true, margin: '-60px' }}
+300:             className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-5 sm:gap-6 items-center"
+301:           >
+302:             {/* Left Flank Graphic: bigger-together.png + Crown */}
+303:             <div className="relative hidden lg:flex flex-col items-center justify-center lg:col-span-2 select-none pointer-events-none gap-2">
+304:               <div className="relative h-9 w-11 filter drop-shadow-[0_0_14px_rgba(0,140,255,0.95)] -rotate-12">
+305:                 <Image src="/crown-icon.png" alt="Crown" fill className="object-contain" />
+306:               </div>
+307:               <motion.div
+308:                 animate={{ y: [0, -4, 0] }}
+309:                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+310:                 className="relative h-32 w-32 filter drop-shadow-[0_0_20px_rgba(0,140,255,0.85)]"
+311:               >
+312:                 <Image
+313:                   src="/bigger-together.png"
+314:                   alt="Bigger Together"
+315:                   fill
+316:                   className="object-contain object-center"
+317:                   priority
+318:                 />
+319:               </motion.div>
+320:             </div>
+321: 
+322:             {/* Bottom Card 1: 4 cols on lg */}
+323:             <div className="lg:col-span-4 w-full">
+324:               {renderFeedbackCard(communityBottomItems[0])}
+325:             </div>
+326: 
+327:             {/* Bottom Card 2: 4 cols on lg */}
+328:             <div className="lg:col-span-4 w-full">
+329:               {renderFeedbackCard(communityBottomItems[1])}
+330:             </div>
+331: 
+332:             {/* Right Flank Graphic: YOUR SUPPORT FUELS US with curved arrow */}
+333:             <div className="relative hidden lg:flex flex-col items-center justify-center lg:col-span-2 gap-2 select-none pointer-events-none">
+334:               <div className="font-['MasterVictory'] text-lg xl:text-xl text-[#0099ff] text-center -rotate-6 filter drop-shadow-[0_0_14px_rgba(0,140,255,0.9)]">
+335:                 YOUR<br />SUPPORT<br />FUELS US
+336:               </div>
+337:               <svg
+338:                 width="44"
+339:                 height="44"
+340:                 viewBox="0 0 60 60"
+341:                 fill="none"
+342:                 xmlns="http://www.w3.org/2000/svg"
+343:                 className="text-[#00d2ff] filter drop-shadow-[0_0_10px_rgba(0,210,255,0.9)]"
+344:               >
+345:                 <path
+346:                   d="M10 15 C 30 10, 45 25, 45 45"
+347:                   stroke="currentColor"
+348:                   strokeWidth="3"
+349:                   strokeLinecap="round"
+350:                 />
+351:                 <path
+352:                   d="M35 45 L 45 45 L 45 35"
+353:                   stroke="currentColor"
+354:                   strokeWidth="3"
+355:                   strokeLinecap="round"
+356:                   strokeLinejoin="round"
+357:                 />
+358:               </svg>
+359:             </div>
+360:           </motion.div>
+361: 
+362:           {/* Mobile View Flank Badges */}
+363:           <div className="mt-12 flex lg:hidden items-center justify-around gap-6 select-none pointer-events-none">
+364:             <div className="relative h-28 w-32 filter drop-shadow-[0_0_18px_rgba(0,140,255,0.9)]">
+365:               <Image
+366:                 src="/bigger-together.png"
+367:                 alt="Bigger Together"
+368:                 fill
+369:                 className="object-contain object-center"
+370:               />
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

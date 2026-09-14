@@ -1,0 +1,164 @@
+      {/* ============================================================ */}
+      {/* SECTION 1: DEVELOPER FEEDBACK                                */}
+      {/* ============================================================ */}
+      <section className="relative z-10 py-12 sm:py-16 lg:py-20">
+        <div className="mx-auto max-w-5xl px-6 sm:px-8">
+          {/* Header Row */}
+          <div className="mb-8 sm:mb-10 lg:mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <div className="flex flex-col items-start max-w-xl">
+              <span className="mb-2 font-mono text-xs sm:text-sm font-semibold tracking-[0.25em] text-[#38bdf8] uppercase drop-shadow-[0_0_8px_rgba(56,189,248,0.7)]">
+                REAL PEOPLE / REAL FEEDBACK
+              </span>
+
+              <div className="relative flex items-center gap-3">
+                <h2 className="font-['MasterVictory'] text-3xl sm:text-4xl lg:text-5xl font-normal leading-tight tracking-normal select-none">
+                  <span className="text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]">DEVELOPER </span>
+                  <span className="text-[#0099ff] drop-shadow-[0_0_24px_rgba(0,140,255,0.9)]">FEEDBACK</span>
+                </h2>
+
+                {/* Crown Icon next to title */}
+                <div className="relative h-8 w-10 sm:h-10 sm:w-12 filter drop-shadow-[0_0_16px_rgba(0,140,255,0.95)] -rotate-12 select-none pointer-events-none">
+                  <Image src="/crown-icon.png" alt="Crown" fill className="object-contain" />
+                </div>
+              </div>
+
+              <p className="mt-3 font-mono text-xs sm:text-sm text-zinc-300 max-w-md leading-relaxed">
+                Builders, founders and devs who&apos;ve worked with us. Here&apos;s what they had to say.
+              </p>
+            </div>
+
+            {/* Top Right Sticker: TRUSTED BY BUILDERS WORLDWIDE + Cross Icon */}
+            <div className="relative hidden md:flex flex-col items-end select-none pointer-events-none">
+              <div className="relative h-10 w-12 filter drop-shadow-[0_0_14px_rgba(0,140,255,0.95)] mb-1">
+                <Image src="/cross-icon.png" alt="Cross" fill className="object-contain" />
+              </div>
+              <div className="font-['MasterVictory'] text-lg sm:text-xl lg:text-2xl text-[#0099ff] text-right -rotate-3 filter drop-shadow-[0_0_14px_rgba(0,140,255,0.9)]">
+                TRUSTED BY BUILDERS<br />WORLDWIDE
+              </div>
+            </div>
+          </div>
+
+          {/* 3 Developer Feedback Cards */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-60px' }}
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6"
+          >
+            {devFeedbackItems.map((item) => renderFeedbackCard(item))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ============================================================ */}
+      {/* SECTION 2: COMMUNITY FEEDBACK                                */}
+      {/* ============================================================ */}
+      <section className="relative z-10 pt-4 sm:pt-6 lg:pt-8 pb-14 sm:pb-18 lg:pb-20">
+        <div className="mx-auto max-w-5xl px-6 sm:px-8">
+          {/* Header Row */}
+          <div className="mb-8 sm:mb-10 lg:mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <div className="flex flex-col items-start max-w-xl">
+              <span className="mb-2 font-mono text-xs sm:text-sm font-semibold tracking-[0.25em] text-[#38bdf8] uppercase drop-shadow-[0_0_8px_rgba(56,189,248,0.7)]">
+                COMMUNITY VOICES
+              </span>
+
+              <h2 className="font-['MasterVictory'] text-3xl sm:text-4xl lg:text-5xl font-normal leading-tight tracking-normal select-none">
+                <span className="text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]">COMMUNITY </span>
+                <span className="text-[#0099ff] drop-shadow-[0_0_24px_rgba(0,140,255,0.9)]">FEEDBACK</span>
+              </h2>
+
+              <p className="mt-3 font-mono text-xs sm:text-sm text-zinc-300 max-w-md leading-relaxed">
+                From active members to long-time supporters, our community keeps the energy alive.
+              </p>
+            </div>
+
+            {/* Top Right Sticker: REAL PEOPLE REAL SUPPORT with Crown */}
+            <div className="relative hidden md:flex flex-col items-end select-none pointer-events-none">
+              <div className="relative h-10 w-12 filter drop-shadow-[0_0_16px_rgba(0,140,255,0.95)] mb-1 rotate-6">
+                <Image src="/crown-icon.png" alt="Crown" fill className="object-contain" />
+              </div>
+              <div className="font-['MasterVictory'] text-lg sm:text-xl lg:text-2xl text-[#0099ff] text-right rotate-2 filter drop-shadow-[0_0_14px_rgba(0,140,255,0.9)]">
+                REAL PEOPLE<br />REAL SUPPORT
+              </div>
+            </div>
+          </div>
+
+          {/* ROW 1: 3 CARDS */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-60px' }}
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6 mb-8 sm:mb-10"
+          >
+            {communityTopItems.map((item) => renderFeedbackCard(item))}
+          </motion.div>
+
+          {/* ROW 2: 2 CARDS CENTERED WITH FLANKING ASSETS */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-60px' }}
+            className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-5 sm:gap-6 items-center"
+          >
+            {/* Left Flank Graphic: bigger-together.png + Crown */}
+            <div className="relative hidden lg:flex flex-col items-center justify-center lg:col-span-2 select-none pointer-events-none gap-2">
+              <div className="relative h-9 w-11 filter drop-shadow-[0_0_14px_rgba(0,140,255,0.95)] -rotate-12">
+                <Image src="/crown-icon.png" alt="Crown" fill className="object-contain" />
+              </div>
+              <motion.div
+                animate={{ y: [0, -4, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                className="relative h-32 w-32 filter drop-shadow-[0_0_20px_rgba(0,140,255,0.85)]"
+              >
+                <Image
+                  src="/bigger-together.png"
+                  alt="Bigger Together"
+                  fill
+                  className="object-contain object-center"
+                  priority
+                />
+              </motion.div>
+            </div>
+
+            {/* Bottom Card 1: 4 cols on lg */}
+            <div className="lg:col-span-4 w-full">
+              {renderFeedbackCard(communityBottomItems[0])}
+            </div>
+
+            {/* Bottom Card 2: 4 cols on lg */}
+            <div className="lg:col-span-4 w-full">
+              {renderFeedbackCard(communityBottomItems[1])}
+            </div>
+
+            {/* Right Flank Graphic: YOUR SUPPORT FUELS US with curved arrow */}
+            <div className="relative hidden lg:flex flex-col items-center justify-center lg:col-span-2 gap-2 select-none pointer-events-none">
+              <div className="font-['MasterVictory'] text-lg xl:text-xl text-[#0099ff] text-center -rotate-6 filter drop-shadow-[0_0_14px_rgba(0,140,255,0.9)]">
+                YOUR<br />SUPPORT<br />FUELS US
+              </div>
+              <svg
+                width="44"
+                height="44"
+                viewBox="0 0 60 60"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="text-[#00d2ff] filter drop-shadow-[0_0_10px_rgba(0,210,255,0.9)]"
+              >
+                <path
+                  d="M10 15 C 30 10, 45 25, 45 45"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M35 45 L 45 45 L 45 35"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+          </motion.div>

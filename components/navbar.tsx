@@ -1,8 +1,8 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Menu } from 'lucide-react'
 
 export function Navbar() {
   return (
@@ -26,20 +26,26 @@ export function Navbar() {
           </div>
         </motion.div>
 
-        {/* Right: Menu Button */}
+        {/* Right: Nav Links + Menu Button */}
         <motion.div
           initial={{ opacity: 0, x: 16 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="flex items-center gap-4"
+          className="flex items-center gap-3 sm:gap-4"
         >
-          <button
-            type="button"
-            aria-label="Navigation Menu"
-            className="group flex h-10 w-10 items-center justify-center rounded-lg border border-[#0099ff]/30 bg-zinc-900/60 text-[#38bdf8] backdrop-blur-md transition-all hover:border-[#00e5ff] hover:bg-[#0099ff]/15 hover:shadow-[0_0_15px_rgba(0,180,255,0.5)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#00d2ff]"
+          <Link
+            href="/docs"
+            className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-[#0099ff]/40 bg-[#0099ff]/10 text-xs font-mono font-semibold text-[#38bdf8] hover:bg-[#0099ff]/25 hover:text-white hover:border-[#00e5ff] transition-all shadow-[0_0_12px_rgba(0,153,255,0.25)]"
           >
-            <Menu className="h-5 w-5 transition-transform group-hover:scale-110" />
-          </button>
+            <span>DOCS // SPEC</span>
+          </Link>
+
+          <Link
+            href="/#contact"
+            className="px-4 py-1.5 rounded-lg bg-[#0099ff] hover:bg-[#00c8ff] text-black text-xs font-mono font-bold tracking-wide transition-colors shadow-[0_0_15px_rgba(0,153,255,0.5)]"
+          >
+            LET&apos;S WORK
+          </Link>
         </motion.div>
       </div>
     </header>

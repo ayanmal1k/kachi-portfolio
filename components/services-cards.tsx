@@ -3,11 +3,12 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { motion, type Variants } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
+
 
 interface ServiceCardData {
   id: string
   title: string
+  roles: [string, string]
   desc: string
   icon: React.ReactNode
 }
@@ -41,14 +42,15 @@ export function ServicesCards() {
 
   const topCards: ServiceCardData[] = [
     {
-      id: 'community',
-      title: 'COMMUNITY MANAGEMENT',
-      desc: 'Manage, engage & grow your community across all platforms.',
+      id: 'community-moderation',
+      title: 'COMMUNITY MANAGER & MODERATOR',
+      roles: ['Community Manager', 'Moderator'],
+      desc: 'Active 24/7 chat moderation, anti-FUD enforcement, member retention, onboarding workflows, and bot setup.',
       icon: (
         <div className="relative h-16 w-16 sm:h-20 sm:w-20 transition-transform duration-300 group-hover:scale-110 filter drop-shadow-[0_0_20px_rgba(0,153,255,0.95)]">
           <Image
             src="/services card icons/community.png"
-            alt="Community Management"
+            alt="Community Manager & Moderator"
             fill
             className="object-contain"
           />
@@ -56,14 +58,15 @@ export function ServicesCards() {
       ),
     },
     {
-      id: 'marketing',
-      title: 'KOL & MARKETING',
-      desc: 'Promote your project through powerful influencers & networks.',
+      id: 'x-graphics',
+      title: 'X (TWITTER) MANAGER & GRAPHICS DESIGNER',
+      roles: ['X (Twitter) Manager', 'Graphics Designer'],
+      desc: 'Viral X content strategies, spaces hosting, high-converting announcement graphics, meme creation, and visual branding.',
       icon: (
         <div className="relative h-16 w-16 sm:h-20 sm:w-20 transition-transform duration-300 group-hover:scale-110 filter drop-shadow-[0_0_20px_rgba(0,153,255,0.95)]">
           <Image
             src="/services card icons/announce.png"
-            alt="KOL & Marketing"
+            alt="X Manager & Graphics Designer"
             fill
             className="object-contain"
           />
@@ -71,14 +74,15 @@ export function ServicesCards() {
       ),
     },
     {
-      id: 'ambassador',
-      title: 'AMBASSADOR PROGRAM',
-      desc: 'Build and manage ambassador programs that scale.',
+      id: 'ambassador-network',
+      title: 'AMBASSADOR & NETWORK BUILDER',
+      roles: ['Ambassador', 'Network Builder'],
+      desc: 'High-trust ecosystem alliances, DAO and founder networking, cross-community integration, and elite brand representation.',
       icon: (
         <div className="relative h-16 w-16 sm:h-20 sm:w-20 transition-transform duration-300 group-hover:scale-110 filter drop-shadow-[0_0_20px_rgba(0,153,255,0.95)]">
           <Image
             src="/services card icons/shieldd.png"
-            alt="Ambassador Program"
+            alt="Ambassador & Network Builder"
             fill
             className="object-contain"
           />
@@ -89,14 +93,15 @@ export function ServicesCards() {
 
   const bottomCards: ServiceCardData[] = [
     {
-      id: 'raiding',
-      title: 'RAIDING & SHILLING',
-      desc: 'Pro raiding and organic shilling to boost visibility.',
+      id: 'raiding-shilling',
+      title: 'RAIDER / ENGAGEMENT & SHILLER',
+      roles: ['Raider / Engagement', 'Shiller'],
+      desc: 'Coordinated organic raids across X and Telegram, viral shilling campaigns, comment-section dominance, and relentless social hype.',
       icon: (
         <div className="relative h-16 w-16 sm:h-20 sm:w-20 transition-transform duration-300 group-hover:scale-110 filter drop-shadow-[0_0_20px_rgba(0,153,255,0.95)]">
           <Image
             src="/services card icons/rockettt.png"
-            alt="Raiding & Shilling"
+            alt="Raider / Engagement & Shiller"
             fill
             className="object-contain"
           />
@@ -104,14 +109,15 @@ export function ServicesCards() {
       ),
     },
     {
-      id: 'strategy',
-      title: 'STRATEGY & CONSULTING',
-      desc: 'Provide expert advice and strategies for long-term growth.',
+      id: 'growth-advisor',
+      title: 'GROWTH STRATEGIST & STRATEGIC ADVISOR',
+      roles: ['Growth Strategist', 'Strategic Advisor'],
+      desc: 'Data-driven growth funnels, tokenomics advisory, pre/post-launch execution strategies, and long-term project sustainability.',
       icon: (
         <div className="relative h-16 w-16 sm:h-20 sm:w-20 transition-transform duration-300 group-hover:scale-110 filter drop-shadow-[0_0_20px_rgba(0,153,255,0.95)]">
           <Image
             src="/services card icons/chess.png"
-            alt="Strategy & Consulting"
+            alt="Growth Strategist & Strategic Advisor"
             fill
             className="object-contain"
           />
@@ -149,25 +155,36 @@ export function ServicesCards() {
 
         {/* Inner Card Background (Deep Dark Glass) */}
         <div
-          className="relative flex flex-col justify-between h-full min-h-[360px] sm:min-h-[390px] p-8 sm:p-10 lg:p-11 bg-[#040814]/95 group-hover:bg-[#050c1f]/90 backdrop-blur-xl transition-colors duration-300 overflow-hidden"
+          className="relative flex flex-col justify-between h-full min-h-[380px] sm:min-h-[410px] p-8 sm:p-10 lg:p-11 bg-[#040814]/95 group-hover:bg-[#050c1f]/90 backdrop-blur-xl transition-colors duration-300 overflow-hidden"
           style={{
             clipPath:
               'polygon(18.5px 0%, calc(100% - 18.5px) 0%, 100% 18.5px, 100% calc(100% - 18.5px), calc(100% - 18.5px) 100%, 18.5px 100%, 0% calc(100% - 18.5px), 0% 18.5px)',
           }}
         >
-
-
           {/* Subtle radial inner glow on hover */}
           <div className="absolute -top-10 -right-10 w-52 h-52 rounded-full bg-[#0099ff]/15 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
           {/* Top: Big Glowing Icon */}
           <div>
-            <div className="mb-7 sm:mb-8 flex items-center">
+            <div className="mb-6 sm:mb-7 flex items-center">
               {card.icon}
             </div>
 
+            {/* Dual Role Badges */}
+            <div className="flex flex-wrap items-center gap-2 mb-4">
+              {card.roles.map((role, idx) => (
+                <span
+                  key={idx}
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#0099ff]/15 border border-[#0099ff]/35 text-[#38bdf8] font-mono text-[11px] sm:text-xs font-semibold tracking-wide drop-shadow-[0_0_8px_rgba(0,153,255,0.4)]"
+                >
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#00d2ff] animate-pulse" />
+                  {role}
+                </span>
+              ))}
+            </div>
+
             {/* Title */}
-            <h3 className="font-['MasterVictory'] text-2xl sm:text-3xl lg:text-[26px] xl:text-[28px] font-normal leading-snug tracking-normal text-white select-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
+            <h3 className="font-['MasterVictory'] text-2xl sm:text-3xl lg:text-[25px] xl:text-[27px] font-normal leading-snug tracking-normal text-white select-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
               {card.title}
             </h3>
 
@@ -176,8 +193,6 @@ export function ServicesCards() {
               {card.desc}
             </p>
           </div>
-
-
         </div>
       </motion.div>
     )

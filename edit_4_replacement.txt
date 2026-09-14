@@ -1,0 +1,43 @@
+        {/* Outer Chamfer Border Frame (Glowing POW Blue) */}
+        <div
+          className="absolute inset-0 bg-[#0099ff] transition-all duration-300 group-hover:bg-[#00c8ff]"
+          style={{
+            clipPath:
+              'polygon(16px 0%, calc(100% - 16px) 0%, 100% 16px, 100% calc(100% - 16px), calc(100% - 16px) 100%, 16px 100%, 0% calc(100% - 16px), 0% 16px)',
+          }}
+        />
+
+        {/* Inner Card Container */}
+        <div
+          className="relative flex flex-col justify-between h-full bg-[#040814]/95 group-hover:bg-[#050c1f]/90 backdrop-blur-xl transition-colors duration-300 overflow-hidden p-3 sm:p-3.5"
+          style={{
+            clipPath:
+              'polygon(14px 0%, calc(100% - 14px) 0%, 100% 14px, 100% calc(100% - 14px), calc(100% - 14px) 100%, 14px 100%, 0% calc(100% - 14px), 0% 14px)',
+          }}
+        >
+          {/* Screenshot Container */}
+          <div className="relative w-full h-[270px] sm:h-[300px] overflow-hidden rounded-lg bg-black/80 border border-zinc-800/60">
+            <Image
+              src={item.imageSrc}
+              alt={item.title}
+              fill
+              className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+            />
+
+            {/* Top-right EXPAND pill badge */}
+            <div className="absolute top-2.5 right-2.5 z-10 flex items-center gap-1 font-mono text-[9px] text-[#38bdf8] bg-black/80 backdrop-blur-md px-2 py-0.5 rounded-full border border-[#0099ff]/40 shadow-md group-hover:border-[#00d2ff] transition-colors">
+              <ZoomIn className="h-2.5 w-2.5" />
+              <span>EXPAND</span>
+            </div>
+
+            {/* Subtle Gradient Shadow at bottom */}
+            <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-[#040814] via-[#040814]/40 to-transparent pointer-events-none" />
+
+            {/* Hover overlay indicator */}
+            <div className="absolute inset-0 bg-[#0099ff]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+              <span className="font-mono text-[11px] font-bold text-white bg-black/80 px-2.5 py-1 rounded-full border border-[#00d2ff]/60 shadow-[0_0_12px_rgba(0,180,255,0.6)]">
+                View Chat
+              </span>
+            </div>
+          </div>
+        </div>
