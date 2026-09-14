@@ -90,7 +90,7 @@ export function Footer() {
           <p className="tracking-wider">
             CREATED BY{' '}
             <a
-              href="https://t.me/ayanmal1k"
+              href="https://t.me/AyanMalikkkk"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#0099ff] hover:text-[#00c8ff] font-bold tracking-widest transition-colors drop-shadow-[0_0_8px_rgba(0,153,255,0.7)] hover:underline"
