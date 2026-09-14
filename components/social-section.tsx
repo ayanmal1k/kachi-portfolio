@@ -101,14 +101,8 @@ export function SocialSection() {
                 </svg>
               </div>
               <div className="flex flex-col min-w-0">
-                <div className="flex items-center gap-1.5 mb-0.5">
-                  <span className="inline-block h-2 w-2 rounded-full bg-[#00ffaa] animate-pulse shadow-[0_0_8px_#00ffaa]" />
-                  <span className="font-mono text-[10px] sm:text-xs text-[#38bdf8] uppercase tracking-wider font-semibold">
-                    OFFICIAL BROADCAST
-                  </span>
-                </div>
-                <span className="font-mono text-xs sm:text-sm font-bold text-white group-hover:text-[#38bdf8] transition-colors truncate">
-                  Follow Official Kachi Channel for Updates
+                <span className="font-mono text-xs sm:text-sm md:text-base font-bold text-white group-hover:text-[#38bdf8] transition-colors truncate">
+                  Follow KACHI OFFICIAL CHANNEL
                 </span>
               </div>
             </div>
